@@ -5,7 +5,8 @@ export default function LoginForm() {
     const [prenom, setPrenom] = useState("")
 
     // comportement
-    const handleClick = () => {
+    const handleSubmit = (event) => {
+        event.preventDefault()
         alert(`Bonjour ${prenom}`)
         setPrenom("")
     }
@@ -17,9 +18,9 @@ export default function LoginForm() {
     <div>
         <h1>Bienvenue chez nous !</h1>
         <p>Connectez vous</p>
-        <form>
-            <input type="text" placeholder='Entrez votre prénom...' onChange={handleChange} required/>
-            <button onClick={handleClick}>Accédez à votre espace</button>
+        <form onSubmit={handleSubmit}>
+            <input type="text" placeholder='Entrez votre prénom...' onChange={handleChange} value={prenom} required/>
+            <button>Accédez à votre espace</button>
         </form>
     </div>
   )
