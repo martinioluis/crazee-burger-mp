@@ -1,5 +1,8 @@
 export default function ErrorPage() {
   return (
-    <div>ErrorPage</div>
+    <div>
+        <h1>ErrorPage</h1>
+        <Link to="/"><button>Retourner à la page d'accueil</button></Link>
+    </div>
   )
 }
